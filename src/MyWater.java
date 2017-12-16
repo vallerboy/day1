@@ -1,3 +1,5 @@
+
+
 public class MyWater {
 
     private static int LARGE_BOTTLE = 2;
@@ -32,6 +34,15 @@ public class MyWater {
         System.out.println("Malych butelek: " + countSmall);
 
         System.out.println("Ilosc wody: " + countWater());
+    }
+
+    public static void main(String[] args) {
+        MyWater myWater = new MyWater();
+        myWater.addLarge(5);
+        myWater.addMedium(10);
+        myWater.addSmall(2);
+
+        myWater.printStatus();
     }
 
 }
