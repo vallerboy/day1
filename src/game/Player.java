@@ -39,4 +39,23 @@ public class Player {
         return name + " " + lastname;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Player player = (Player) o;
+
+        if (points != player.points) return false;
+        if (name != null ? !name.equals(player.name) : player.name != null) return false;
+        return lastname != null ? lastname.equals(player.lastname) : player.lastname == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        result = 31 * result + points;
+        return result;
+    }
 }
